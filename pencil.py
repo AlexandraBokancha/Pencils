@@ -3,12 +3,11 @@ import random
 name_1, bot = 'John', 'Jack'
 pencils_showed = 0
 real_name = ''
-possible_values = ["1", "2", "3"]
+possible_values = ['1', '2', '3']
 
 
 def bot_playing():
     global pencils_showed
-
     if pencils_showed % 4 == 0:
         pencils_showed -= 3
         print("3")
@@ -37,10 +36,9 @@ def check_num(value):
 def user_playing():
     global possible_values
     global pencils_showed
+    
     while True:
-
         pencils_taken = input()
-
         if pencils_taken not in possible_values:
             print("Possible values: '1', '2' or '3'")
         elif pencils_taken in possible_values and int(pencils_taken) > pencils_showed:
@@ -70,7 +68,7 @@ while True:
 
     if name == name_1 or name == bot:
         real_name += name
-        print(int(pencils_showed) * "|")
+        print(int(pencils_showed) * '|')
         break
 
 while int(pencils_showed) > 0:
@@ -84,7 +82,7 @@ while int(pencils_showed) > 0:
             real_name = name_1
             print("Jack's turn: ")
             bot_playing()
-            print(int(pencils_showed) * "|")
+            print(int(pencils_showed) * '|')
 
     if pencils_showed == 0:
         print(f'{real_name} won!')
